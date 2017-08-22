@@ -5,7 +5,7 @@
 $this->breadcrumbs=array(
 	'Raks'=>array('index'),
 	$model->id_rak=>array('view','id'=>$model->id_rak),
-	'Update',
+	'Edit',
 	);
 
 	$this->pageTitle='Edit Rak';

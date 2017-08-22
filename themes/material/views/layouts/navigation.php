@@ -54,7 +54,7 @@
     <div class="container">
       <div id="navigation">
         <!-- Navigation Menu-->
-        <ul class="navigation-menu">
+        <ul class="navigation-menu pull-right">
 
 
          <?php 
@@ -67,12 +67,14 @@
             'itemCssClass'=>'item-test',
             'encodeLabel'=>false,
             'items'=>array(
-             array('label'=>'Home', 'url'=>array('/site/index'), 'visible'=>!Yii::app()->user->isGuest),
-             array('label'=>'Kategori', 'url'=>array('/kategori/admin'), 'visible'=>!Yii::app()->user->isGuest),
-             array('label'=>'Divisi', 'url'=>array('/divisi/admin'), 'visible'=>!Yii::app()->user->isGuest),
-             array('label'=>'Jabatan', 'url'=>array('/jabatan/admin'), 'visible'=>!Yii::app()->user->isGuest),
+             // array('label'=>'Home', 'url'=>array('/site/index'), 'visible'=>!Yii::app()->user->isGuest),
+             // array('label'=>'Kategori', 'url'=>array('/kategori/admin'), 'visible'=>!Yii::app()->user->isGuest),
+             // array('label'=>'Jabatan', 'url'=>array('/jabatan/admin'), 'visible'=>!Yii::app()->user->isGuest),
+             // array('label'=>'Rayon', 'url'=>array('/divisi/admin'), 'visible'=>!Yii::app()->user->isGuest),
+             array('label'=>'Lemari', 'url'=>array('/lemari/admin'), 'visible'=>!Yii::app()->user->isGuest),
+             array('label'=>'Pelanggan', 'url'=>array('/pelanggan/admin'), 'visible'=>!Yii::app()->user->isGuest),
              array('label'=>'Petugas', 'url'=>array('/petugas/admin'), 'visible'=>!Yii::app()->user->isGuest),
-             array('label'=>'Report', 'url'=>array('/event/report'), 'visible'=>!Yii::app()->user->isGuest),
+             // array('label'=>'Report', 'url'=>array('/event/report'), 'visible'=>!Yii::app()->user->isGuest),
              ),
             )); 
 

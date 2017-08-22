@@ -3,7 +3,7 @@
 /* @var $data Rak */
 ?>
 
-<div class="col-xs-6">
+<div class="col-xs-12 col-md-6 col-lg-6">
 	<!-- Default box -->
 	<div class="box box-solid">
 		<div class="box-header">
@@ -16,24 +16,18 @@
 			</div>
 			<div class="box-body">
 
-					<b><?php echo CHtml::encode($data->getAttributeLabel('kode')); ?>:</b>
-	<?php echo CHtml::encode($data->kode); ?>
-	<br />
+				<?php $this->widget('zii.widgets.CDetailView', array(
+				'data'=>$data,
+				'htmlOptions'=>array("class"=>"table"),
+				'attributes'=>array(
+							'id_rak',
+		'kode',
+		'deskripsi',
+		'lemari_id',
+		'status',
+					),
+					)); ?>
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('deskripsi')); ?>:</b>
-	<?php echo CHtml::encode($data->deskripsi); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('ruangan_id')); ?>:</b>
-	<?php echo CHtml::encode($data->ruangan_id); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('status')); ?>:</b>
-	<?php echo CHtml::encode($data->status); ?>
-	<br />
-
-        
-
-			</div><!-- /.box-body -->
-		</div><!-- /.box -->
-	</div>
+				</div><!-- /.box-body -->
+			</div><!-- /.box -->
+		</div>

@@ -1,13 +1,13 @@
 <?php
-/* @var $this RakController */
-/* @var $model Rak */
+/* @var $this LemariController */
+/* @var $model Lemari */
 
 $this->breadcrumbs=array(
-	'Raks'=>array('index'),
+	'Lemaris'=>array('index'),
 	'Add',
 	);
 
-	$this->pageTitle='Add Rak';
+	$this->pageTitle='Add Lemari';
 	?>
 
 	<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

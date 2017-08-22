@@ -6,25 +6,47 @@ $this->breadcrumbs=array(
 	'Raks',
 	);
 
-	$this->pageTitle='Daftar Rak';
+	$this->pageTitle='List Rak';
 	?>
 
-	<section class="col-xs-12">
+	<span class="visible-xs">
 
-		<?php echo CHtml::link('Tambah Rak',
- array('create'),
- array('class' => 'btn btn-success btn-flat'));
- ?>
-		<?php echo CHtml::link('Kelola Rak',
- array('admin'),
- array('class' => 'btn btn-success btn-flat'));
- ?>
+		<?php echo CHtml::link('<i class="fa fa-plus"></i>',
+	 array('create'),
+ array('class' => 'btn btn-primary btn-flat','title'=>'Add Rak'));
+		 ?>
+		<?php echo CHtml::link('<i class="fa fa-tasks"></i>',
+	 array('index'),
+ array('class' => 'btn btn-primary btn-flat', 'title'=>'List Rak'));
+		 ?>
+		<?php echo CHtml::link('<i class="fa fa-table"></i>',
+	 array('admin'),
+ array('class' => 'btn btn-primary btn-flat','title'=>'Manage Rak'));
+		 ?>
 
-		<HR>
+	</span> 
 
-			<?php $this->widget('zii.widgets.CListView', array(
-			'dataProvider'=>$dataProvider,
-			'itemView'=>'_view',
-			)); ?>
+	<span class="hidden-xs">
 
-		</section>
+		<?php echo CHtml::link('Add',
+	 array('create'),
+ array('class' => 'btn btn-primary btn-flat','title'=>'Add Rak'));
+		 ?>
+		<?php echo CHtml::link('List',
+	 array('index'),
+ array('class' => 'btn btn-primary btn-flat', 'title'=>'List Rak'));
+		 ?>
+		<?php echo CHtml::link('Manage',
+	 array('admin'),
+ array('class' => 'btn btn-primary btn-flat','title'=>'Manage Rak'));
+		 ?>
+
+	</span>
+
+	<HR>
+
+		<?php $this->widget('zii.widgets.CListView', array(
+		'dataProvider'=>$dataProvider,
+		'itemView'=>'_view',
+		)); ?>
+

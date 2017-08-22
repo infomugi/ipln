@@ -1,23 +1,23 @@
 <?php
 
 /**
- * This is the model class for table "rak".
+ * This is the model class for table "lemari".
  *
- * The followings are the available columns in table 'rak':
- * @property integer $id_rak
+ * The followings are the available columns in table 'lemari':
+ * @property integer $id_lemari
  * @property string $kode
  * @property string $deskripsi
- * @property integer $lemari_id
+ * @property integer $tipe
  * @property integer $status
  */
-class Rak extends CActiveRecord
+class Lemari extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'rak';
+		return 'lemari';
 	}
 
 	/**
@@ -28,13 +28,13 @@ class Rak extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('kode, deskripsi, lemari_id, status', 'required'),
-			array('lemari_id, status', 'numerical', 'integerOnly'=>true),
-			array('kode', 'length', 'max'=>15),
-			array('deskripsi', 'length', 'max'=>255),
+			array('kode, deskripsi, tipe, status', 'required'),
+			array('status, tipe', 'numerical', 'integerOnly'=>true),
+			array('kode', 'length', 'max'=>25),
+			array('deskripsi', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id_rak, kode, deskripsi, lemari_id, status', 'safe', 'on'=>'search'),
+			array('id_lemari, kode, deskripsi, status', 'safe', 'on'=>'search'),
 			);
 	}
 
@@ -55,10 +55,10 @@ class Rak extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id_rak' => 'Id Rak',
-			'kode' => 'Kode',
-			'deskripsi' => 'Deskripsi',
-			'lemari_id' => 'Lemari',
+			'id_lemari' => 'Id Lemari',
+			'kode' => 'Kode Arsip Lemari',
+			'deskripsi' => 'Keterangan',
+			'tipe' => 'Tipe',
 			'status' => 'Status',
 			);
 	}
@@ -81,10 +81,9 @@ class Rak extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id_rak',$this->id_rak);
+		$criteria->compare('id_lemari',$this->id_lemari);
 		$criteria->compare('kode',$this->kode,true);
 		$criteria->compare('deskripsi',$this->deskripsi,true);
-		$criteria->compare('lemari_id',$this->lemari_id);
 		$criteria->compare('status',$this->status);
 
 		return new CActiveDataProvider($this, array(
@@ -96,10 +95,22 @@ class Rak extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Rak the static model class
+	 * @return Lemari the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
+	}
+
+	public function tipe($data){
+		if($data==1){
+			return "success";
+		}else if($data==2){
+			return "info";
+		}else if($data==3){
+			return "warning";
+		}else{
+			return "danger";
+		}
 	}
 }

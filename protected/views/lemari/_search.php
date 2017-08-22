@@ -1,6 +1,6 @@
 <?php
-/* @var $this RakController */
-/* @var $model Rak */
+/* @var $this LemariController */
+/* @var $model Lemari */
 /* @var $form CActiveForm */
 ?>
 
@@ -12,23 +12,18 @@
 )); ?>
 
 	<div class="row">
-		<?php echo $form->label($model,'id_rak'); ?>
-		<?php echo $form->textField($model,'id_rak'); ?>
+		<?php echo $form->label($model,'id_lemari'); ?>
+		<?php echo $form->textField($model,'id_lemari'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'kode'); ?>
-		<?php echo $form->textField($model,'kode',array('size'=>15,'maxlength'=>15)); ?>
+		<?php echo $form->textField($model,'kode',array('size'=>25,'maxlength'=>25)); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'deskripsi'); ?>
-		<?php echo $form->textField($model,'deskripsi',array('size'=>60,'maxlength'=>255)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'lemari_id'); ?>
-		<?php echo $form->textField($model,'lemari_id'); ?>
+		<?php echo $form->textArea($model,'deskripsi',array('rows'=>6, 'cols'=>50)); ?>
 	</div>
 
 	<div class="row">

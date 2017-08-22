@@ -11034,3 +11034,108 @@ Stack trace:
 REQUEST_URI=/skripsi/aplikasi_arsip_pln/index.php?r=rak/admin
 HTTP_REFERER=http://192.168.43.29/skripsi/aplikasi_arsip_pln/index.php?r=rak/view&id=1
 ---
+2017/08/22 22:19:30 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not allowed to access this page.' in C:\xampp\htdocs\yii\framework\gii\GiiModule.php:170
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(263): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('gii')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\ipln\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ipln/index.php?r=gii
+---
+2017/08/22 22:20:28 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not allowed to access this page.' in C:\xampp\htdocs\yii\framework\gii\GiiModule.php:170
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(263): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('gii')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\ipln\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ipln/index.php?r=gii
+---
+2017/08/22 22:20:42 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not allowed to access this page.' in C:\xampp\htdocs\yii\framework\gii\GiiModule.php:170
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(263): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('gii')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\ipln\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ipln/index.php?r=gii
+---
+2017/08/22 22:20:50 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not allowed to access this page.' in C:\xampp\htdocs\yii\framework\gii\GiiModule.php:170
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(263): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('gii')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\ipln\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ipln/index.php?r=gii
+---
+2017/08/22 22:20:51 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not allowed to access this page.' in C:\xampp\htdocs\yii\framework\gii\GiiModule.php:170
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(263): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('gii')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\ipln\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ipln/index.php?r=gii
+---
+2017/08/22 22:21:01 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not allowed to access this page.' in C:\xampp\htdocs\yii\framework\gii\GiiModule.php:170
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(263): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('gii')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\ipln\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ipln/index.php?r=gii
+---
+2017/08/22 22:21:02 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not allowed to access this page.' in C:\xampp\htdocs\yii\framework\gii\GiiModule.php:170
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(263): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('gii')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\ipln\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ipln/index.php?r=gii
+---
+2017/08/23 00:48:07 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Request anda tidak valid' in C:\xampp\htdocs\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#9 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('ail/create')
+#10 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\ipln\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/ipln/index.php?r=ail/create&lemari=1&rak=A1-1&kolom=1&baris=1
+---
+2017/08/23 00:48:10 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Request anda tidak valid' in C:\xampp\htdocs\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#9 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('ail/create')
+#10 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\ipln\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/ipln/index.php?r=ail/create&lemari=1&rak=A1-1&kolom=1&baris=1
+HTTP_REFERER=http://192.168.43.29/ipln/index.php?r=lemari/admin
+---

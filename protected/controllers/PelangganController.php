@@ -1,6 +1,6 @@
 <?php
 
-class RakController extends Controller
+class PelangganController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -16,7 +16,7 @@ class RakController extends Controller
 		return array(
 			'accessControl', // perform access control for CRUD operations
 			// 'postOnly + delete', // we only allow deletion via POST request
-			);
+		);
 	}
 
 	/**
@@ -28,21 +28,27 @@ class RakController extends Controller
 	{
 		return array(
 			array('allow',
-				'actions'=>array('create','update','view','delete','admin','index','changeimage','enable','disable'),
+				'actions'=>array('view','index'),
 				'users'=>array('@'),
-				'expression'=>'Yii::app()->user->record->level==1',
+				'expression'=>'Yii::app()->user->record->level==3',
 				),
 			array('allow',
-				'actions'=>array('view','index'),
+				'actions'=>array('create','update','view','delete'),
 				'users'=>array('@'),
 				'expression'=>'Yii::app()->user->record->level==2',
 				),			
+			array('allow',
+				'actions'=>array('create','update','view','delete','admin'),
+				'users'=>array('@'),
+				'expression'=>'Yii::app()->user->record->level==1',
+				),
 			array('deny',
-				'users'=>array('*'),
+				'actions'=>array('create','update','view','delete','admin'),
+				'users'=>array('@'),
+				'expression'=>'!Yii::app()->user->record->level==1',
 				),
 			);
 	}
-
 
 	/**
 	 * Displays a particular model.
@@ -50,44 +56,32 @@ class RakController extends Controller
 	 */
 	public function actionView($id)
 	{
-		if(Yii::app()->request->isAjaxRequest)
-		{
-			$this->renderPartial('view',array(
-				'model'=>$this->loadModel($id),
-				), false, true);
-		}
-		else
-		{
-			$this->render('view',array(
-				'model'=>$this->loadModel($id),
-				));
-		}
+		$this->render('view',array(
+			'model'=>$this->loadModel($id),
+		));
 	}
 
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate($id)
+	public function actionCreate()
 	{
-		$model=new Rak;
+		$model=new Pelanggan;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Rak']))
+		if(isset($_POST['Pelanggan']))
 		{
-			$model->attributes=$_POST['Rak'];
-			$model->lemari_id = $id;
-			$model->status = 450;
-			if($model->save()){
-				$this->redirect(array('lemari/view','id'=>$id));
-			}
+			$model->attributes=$_POST['Pelanggan'];
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->id_pelanggan));
 		}
 
 		$this->render('create',array(
 			'model'=>$model,
-			));
+		));
 	}
 
 	/**
@@ -102,16 +96,16 @@ class RakController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Rak']))
+		if(isset($_POST['Pelanggan']))
 		{
-			$model->attributes=$_POST['Rak'];
+			$model->attributes=$_POST['Pelanggan'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id_rak));
+				$this->redirect(array('view','id'=>$model->id_pelanggan));
 		}
 
 		$this->render('update',array(
 			'model'=>$model,
-			));
+		));
 	}
 
 	/**
@@ -133,10 +127,10 @@ class RakController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Rak');
+		$dataProvider=new CActiveDataProvider('Pelanggan');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
-			));
+		));
 	}
 
 	/**
@@ -144,26 +138,26 @@ class RakController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Rak('search');
+		$model=new Pelanggan('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Rak']))
-			$model->attributes=$_GET['Rak'];
+		if(isset($_GET['Pelanggan']))
+			$model->attributes=$_GET['Pelanggan'];
 
 		$this->render('admin',array(
 			'model'=>$model,
-			));
+		));
 	}
 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Rak the loaded model
+	 * @return Pelanggan the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Rak::model()->findByPk($id);
+		$model=Pelanggan::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -171,30 +165,14 @@ class RakController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Rak $model the model to be validated
+	 * @param Pelanggan $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='rak-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='pelanggan-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
 	}
-
-	public function actionEnable($id)
-	{
-		$model=$this->loadModel($id);
-		$model->status = 1;
-		$model->save();
-		$this->redirect(array('index'));
-	}	
-
-	public function actionDisable($id)
-	{
-		$model=$this->loadModel($id);
-		$model->status = 0;
-		$model->save();
-		$this->redirect(array('index'));
-	}			
 }
