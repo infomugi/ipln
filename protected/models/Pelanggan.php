@@ -41,7 +41,7 @@ class Pelanggan extends CActiveRecord
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id_pelanggan, kode, nama, alamat, tarif, daya, rupiah_uil, status', 'safe', 'on'=>'search'),
-		);
+			);
 	}
 
 	/**
@@ -52,7 +52,7 @@ class Pelanggan extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-		);
+			);
 	}
 
 	/**
@@ -69,7 +69,7 @@ class Pelanggan extends CActiveRecord
 			'daya' => 'Daya',
 			'rupiah_uil' => 'Rupiah Uil',
 			'status' => 'Status',
-		);
+			);
 	}
 
 	/**
@@ -101,7 +101,7 @@ class Pelanggan extends CActiveRecord
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
-		));
+			));
 	}
 
 	/**
@@ -113,5 +113,17 @@ class Pelanggan extends CActiveRecord
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
+	}
+
+	public function data($data){
+		if($data==1){
+			return "450";
+		}elseif($data==2){
+			return "900";
+		}elseif($data==3){
+			return "1200";
+		}elseif($data==4){
+			return "2200";
+		}
 	}
 }

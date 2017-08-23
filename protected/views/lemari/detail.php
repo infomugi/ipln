@@ -34,13 +34,29 @@ $this->pageTitle='Detail Lemari - '.$model->kode;
 								<?php 
 								$kode = $model->kode.$x.'-'.$i;
 								$quota = Yii::app()->db->createCommand("SELECT COUNT(kode_rak) FROM ail where kode_rak='".$kode."'")->queryScalar();
-								if($quota >= 1 && $quota <= 3){
+								if($quota == 0){
 
 									echo CHtml::link("Laci " . $model->kode.$x.'-'.$i, 
-										array('lemari/view', 'id'=>$model->id_lemari,
+										array('ail/create', 'lemari'=>$model->id_lemari,
+											'rak'=>$model->kode.$x.'-'.$i,
+											'kolom'=>$i,
+											'baris'=>$x,
+											'rak_id'=>$x,
 											), array('class' => 'btn btn-sm btn-'.Lemari::model()->tipe($model->tipe).' btn-flat', 'title'=>$model->deskripsi . " - " . $model->kode.$x.'-'.$i));
 								}else{
-									echo "<div class='label label-warning'>Masih Kosong</div>";
+
+									if($quota == 3){
+										echo "<div class='label label-danger'>Full Terisi (".$quota.")</div>";	
+									}else{
+										echo CHtml::link("Laci " . $model->kode.$x.'-'.$i, 
+											array('ail/create', 'lemari'=>$model->id_lemari,
+												'rak'=>$model->kode.$x.'-'.$i,
+												'kolom'=>$i,
+												'baris'=>$x,
+												'rak_id'=>$x,
+												), array('class' => 'btn btn-sm btn-warning btn-flat', 'title'=>"Sisa (".(3-$quota).") Dokumen"));
+									}
+
 								}
 
 								?>
@@ -57,13 +73,3 @@ $this->pageTitle='Detail Lemari - '.$model->kode;
 			</div>
 
 
-
-
-
-
-
-			<script>
-				$(document).ready(function(){
-					$('[data-toggle="tooltip"]').tooltip();
-				});
-			</script>

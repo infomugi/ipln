@@ -7,41 +7,30 @@ $this->breadcrumbs=array(
 	'Kelola',
 	);
 
-	$this->pageTitle='Kelola Ail';
-	?>
+$this->pageTitle='Kelola Ail';
+?>
 
-	<section class="col-xs-12">
 
-		<?php echo CHtml::link('Tambah Ail',
- array('create'),
- array('class' => 'btn btn-success btn-flat'));
- ?>
-		<?php echo CHtml::link('Daftar Ail',
- array('index'),
- array('class' => 'btn btn-success btn-flat'));
- ?>
 
-		<HR>
+<?php $this->widget('zii.widgets.grid.CGridView', array(
+	'id'=>'ail-grid',
+	'dataProvider'=>$model->search(),
+	'filter'=>$model,
+	'itemsCssClass' => 'table table-bordered table-striped dataTable table-hover',
+	'columns'=>array(
 
-			<?php $this->widget('zii.widgets.grid.CGridView', array(
-			'id'=>'ail-grid',
-			'dataProvider'=>$model->search(),
-			'filter'=>$model,
-			'itemsCssClass' => 'table table-bordered table-striped dataTable table-hover',
-			'columns'=>array(
-
-			array(
+		array(
 			'header'=>'No',
 			'value'=>'$this->grid->dataProvider->pagination->currentPage*$this->grid->dataProvider->pagination->pageSize + $row+1',
 			'htmlOptions'=>array('width'=>'10px', 
-			'style' => 'text-align: center;')),
+				'style' => 'text-align: center;')),
 
-					'id_ail',
+					// 'id_ail',
 		'tanggal_buat',
-		'tanggal_update',
-		'petugas_id',
-		'pelanggan_id',
-		'kode_rak',
+		'kode_map',
+		array('name'=>'petugas_id','value'=>'$data->Petugas->nama'),
+		array('name'=>'pelanggan_id','value'=>'$data->Pelanggan->nama'),
+					// 'tanggal_update',
 		/*
 		'rayon_id',
 		'lemari_id',
@@ -62,13 +51,12 @@ $this->breadcrumbs=array(
 		'deskripsi',
 		'status',
 		*/
-			array(
+		array(
 			'header'=>'Action',
 			'class'=>'CButtonColumn',
 			'htmlOptions'=>array('width'=>'100px', 
-			'style' => 'text-align: center;'),
+				'style' => 'text-align: center;'),
 			),
-			),
-			)); ?>
-			
-		</section>
+		),
+		)); ?>
+

@@ -59,7 +59,7 @@
 					<?php echo $form->error($model,'tipe'); ?>
 					<?php
 					echo $form->dropDownlist($model,'tipe',
-						array(''=>'-- Pilih Warna --','1'=>'Hijau','2'=>'Biru','3'=>'Kuning','4'=>'Merah'), 
+						array(''=>'-- Pilih Warna --','1'=>'Hijau','2'=>'Biru','4'=>'Merah'), 
 						array('class'=>'form-control')
 						);
 						?>

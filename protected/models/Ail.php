@@ -10,6 +10,7 @@
  * @property integer $petugas_id
  * @property integer $pelanggan_id
  * @property string $kode_rak
+ * @property string $kode_map
  * @property integer $rayon_id
  * @property integer $lemari_id
  * @property integer $rak_id
@@ -49,9 +50,10 @@ class Ail extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('tanggal_buat, tanggal_update, petugas_id, pelanggan_id, kode_rak, rayon_id, lemari_id, rak_id, kolom_id, baris_id, kondisi_amplop, kondisi_ail, surat_surat_permohonan, surat_identitas_pelanggan, surat_data_survei, surat_jawaban, surat_perjanjian, surat_pernyataan, surat_kuitansi, surat_perintah_kerja, surat_bap, surat_pdl, surat_lainlain', 'required'),
-			array('petugas_id, pelanggan_id, rayon_id, lemari_id, kolom_id, baris_id, kondisi_amplop, kondisi_ail, surat_surat_permohonan, surat_identitas_pelanggan, surat_data_survei, surat_jawaban, surat_perjanjian, surat_pernyataan, surat_kuitansi, surat_perintah_kerja, surat_bap, surat_pdl, surat_lainlain, status', 'numerical', 'integerOnly'=>true),
-			array('kode_rak', 'length', 'max'=>25),
+			// array('tanggal_buat, tanggal_update, petugas_id, pelanggan_id, kode_rak, rayon_id, lemari_id, rak_id, kolom_id, baris_id, kondisi_amplop, kondisi_ail, surat_surat_permohonan, surat_identitas_pelanggan, surat_data_survei, surat_jawaban, surat_perjanjian, surat_pernyataan, surat_kuitansi, surat_perintah_kerja, surat_bap, surat_pdl, surat_lainlain', 'required'),
+			array('tanggal_buat, tanggal_update, petugas_id, pelanggan_id, kode_rak, rayon_id, lemari_id, rak_id, kolom_id, baris_id', 'required'),
+			array('petugas_id, pelanggan_id, rayon_id, lemari_id, kolom_id, baris_id, kondisi_amplop, kondisi_ail, surat_surat_permohonan, surat_identitas_pelanggan, surat_data_survei, surat_jawaban, surat_perjanjian, surat_pernyataan, surat_kuitansi, surat_perintah_kerja, surat_bap, surat_pdl, surat_lainlain, status, nomor_urut', 'numerical', 'integerOnly'=>true),
+			array('kode_rak, kode_map', 'length', 'max'=>25),
 			array('deskripsi', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
@@ -68,6 +70,7 @@ class Ail extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'Pelanggan'=>array(self::BELONGS_TO,'Pelanggan','pelanggan_id'),
+			'Petugas'=>array(self::BELONGS_TO,'Petugas','petugas_id'),
 			);
 	}
 
@@ -101,7 +104,7 @@ class Ail extends CActiveRecord
 			'surat_bap' => 'Surat Bap',
 			'surat_pdl' => 'Surat Pdl',
 			'surat_lainlain' => 'Surat Lainlain',
-			'deskripsi' => 'Deskripsi',
+			'deskripsi' => 'Keterangan',
 			'status' => 'Status',
 			);
 	}
@@ -165,5 +168,13 @@ class Ail extends CActiveRecord
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
+	}
+
+	public function status($data){
+		if($data==1){
+			return "Ada";
+		}else{
+			return "Tidak Ada";
+		}
 	}
 }

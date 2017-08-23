@@ -16,7 +16,7 @@ class LemariController extends Controller
 		return array(
 			'accessControl', // perform access control for CRUD operations
 			// 'postOnly + delete', // we only allow deletion via POST request
-		);
+			);
 	}
 
 	/**
@@ -28,7 +28,7 @@ class LemariController extends Controller
 	{
 		return array(
 			array('allow',
-				'actions'=>array('create','update','view','delete','admin','index','changeimage','enable','disable'),
+				'actions'=>array('create','update','view','delete','admin','index','changeimage','enable','disable','detail'),
 				'users'=>array('@'),
 				'expression'=>'Yii::app()->user->record->level==1',
 				),
@@ -64,6 +64,22 @@ class LemariController extends Controller
 		}
 	}
 
+	public function actionDetail($id)
+	{
+		if(Yii::app()->request->isAjaxRequest)
+		{
+			$this->renderPartial('detail',array(
+				'model'=>$this->loadModel($id),
+				), false, true);
+		}
+		else
+		{
+			$this->render('view',array(
+				'model'=>$this->loadModel($id),
+				));
+		}
+	}	
+
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
@@ -84,7 +100,7 @@ class LemariController extends Controller
 
 		$this->render('create',array(
 			'model'=>$model,
-		));
+			));
 	}
 
 	/**
@@ -108,7 +124,7 @@ class LemariController extends Controller
 
 		$this->render('update',array(
 			'model'=>$model,
-		));
+			));
 	}
 
 	/**
@@ -133,7 +149,7 @@ class LemariController extends Controller
 		$dataProvider=new CActiveDataProvider('Lemari');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
-		));
+			));
 	}
 
 	/**
@@ -148,7 +164,7 @@ class LemariController extends Controller
 
 		$this->render('admin',array(
 			'model'=>$model,
-		));
+			));
 	}
 
 	/**

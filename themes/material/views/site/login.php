@@ -61,7 +61,7 @@ $this->breadcrumbs=array(
 
         <!-- Footer -->
         <div class="footer text-muted">
-          &copy; <?php echo date('Y'); ?>. <a href="#"><?php echo YII::app()->name; ?></a> by <a href="#" target="_blank">Beni Wijaya</a>
+          &copy; <?php echo date('Y'); ?>.
         </div>
         <!-- /footer -->
 

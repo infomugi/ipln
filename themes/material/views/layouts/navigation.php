@@ -71,6 +71,8 @@
              // array('label'=>'Kategori', 'url'=>array('/kategori/admin'), 'visible'=>!Yii::app()->user->isGuest),
              // array('label'=>'Jabatan', 'url'=>array('/jabatan/admin'), 'visible'=>!Yii::app()->user->isGuest),
              // array('label'=>'Rayon', 'url'=>array('/divisi/admin'), 'visible'=>!Yii::app()->user->isGuest),
+             array('label'=>'Registrasi AIL', 'url'=>array('/site/registrasi'), 'visible'=>!Yii::app()->user->isGuest),
+             array('label'=>'Kelola AIL', 'url'=>array('/ail/admin'), 'visible'=>!Yii::app()->user->isGuest),
              array('label'=>'Lemari', 'url'=>array('/lemari/admin'), 'visible'=>!Yii::app()->user->isGuest),
              array('label'=>'Pelanggan', 'url'=>array('/pelanggan/admin'), 'visible'=>!Yii::app()->user->isGuest),
              array('label'=>'Petugas', 'url'=>array('/petugas/admin'), 'visible'=>!Yii::app()->user->isGuest),

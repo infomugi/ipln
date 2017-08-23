@@ -24,7 +24,8 @@
 
 				<div class="col-sm-8">
 					<?php echo $form->error($model,'kode'); ?>
-					<?php echo $form->textField($model,'kode',array('class'=>'form-control')); ?>
+					<?php $this->widget('CMaskedTextField',array('model'=>$model,'attribute'=>'kode','mask'=>'53567-9999999','htmlOptions'=>array('class'=>'form-control')));
+					?>
 				</div>
 
 			</div>  
@@ -120,7 +121,7 @@
 							<?php echo $form->error($model,'status'); ?>
 							<?php
 							echo $form->dropDownlist($model,'status',
-								array(''=>'-- Pilih Warna --','1'=>'Aktif','0'=>'Tidak Aktif'), 
+								array(''=>'-- Status Pelanggan --','1'=>'Aktif','0'=>'Tidak Aktif'), 
 								array('class'=>'form-control')
 								);
 								?>

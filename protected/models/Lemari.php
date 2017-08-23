@@ -107,8 +107,6 @@ class Lemari extends CActiveRecord
 			return "success";
 		}else if($data==2){
 			return "info";
-		}else if($data==3){
-			return "warning";
 		}else{
 			return "danger";
 		}

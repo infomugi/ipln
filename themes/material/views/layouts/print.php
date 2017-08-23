@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-    <?php
-    $baseUrl = Yii::app()->theme->baseUrl; 
-    $cs = Yii::app()->getClientScript();
-    Yii::app()->clientScript->registerCoreScript('jquery');
-    ?>
+	<?php
+	$baseUrl = Yii::app()->theme->baseUrl; 
+	$cs = Yii::app()->getClientScript();
+	Yii::app()->clientScript->registerCoreScript('jquery');
+	?>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 	<link href="<?php echo $baseUrl;?>/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -19,11 +19,10 @@
 	<div id="cetak">
 		<header>
 			<H1><center><B><?php echo YII::app()->name; ?></B></center></H1>
-			<p><center><b>Sistem Monitoring Kegiatan Badan Pusat Statistik Jawa Barat</b></center></p>
 			<HR>
-		</header>
-		<?php echo $content ?>
-	</div>
+			</header>
+			<?php echo $content ?>
+		</div>
 
-</body>
-</html>
+	</body>
+	</html>
