@@ -54,6 +54,7 @@ class Ail extends CActiveRecord
 			array('tanggal_buat, tanggal_update, petugas_id, pelanggan_id, kode_rak, rayon_id, lemari_id, rak_id, kolom_id, baris_id', 'required'),
 			array('petugas_id, pelanggan_id, rayon_id, lemari_id, kolom_id, baris_id, kondisi_amplop, kondisi_ail, surat_surat_permohonan, surat_identitas_pelanggan, surat_data_survei, surat_jawaban, surat_perjanjian, surat_pernyataan, surat_kuitansi, surat_perintah_kerja, surat_bap, surat_pdl, surat_lainlain, status, nomor_urut', 'numerical', 'integerOnly'=>true),
 			array('kode_rak, kode_map', 'length', 'max'=>25),
+			array('deskripsi', 'length', 'max'=>255),
 			array('deskripsi', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.

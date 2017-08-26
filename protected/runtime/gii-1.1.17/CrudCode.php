@@ -1,5 +1,5 @@
 <?php
 return array (
-  'template' => 'zdashboard',
+  'template' => 'adminmaterial',
   'baseControllerClass' => 'Controller',
 );

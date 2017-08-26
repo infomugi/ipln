@@ -8,7 +8,7 @@ $this->breadcrumbs=array(
 	'Update',
 	);
 
-	$this->pageTitle='Edit Ail';
-	?>
+$this->pageTitle='Edit Ail';
+?>
 
-	<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php echo $this->renderPartial('_form_update', array('model'=>$model)); ?>
