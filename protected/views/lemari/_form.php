@@ -49,6 +49,49 @@
 				
 			</div>  
 
+			<?php if($model->isNewRecord): ?>
+				<div class="form-group">
+					
+					<div class="col-sm-4 control-label">
+						<?php echo $form->labelEx($model,'baris'); ?>
+					</div>   
+
+					<div class="col-sm-8">
+						<?php echo $form->error($model,'baris'); ?>
+						<?php echo $form->textField($model,'baris',array('class'=>'form-control')); ?>
+					</div>
+					
+				</div>  
+
+				<div class="form-group">
+					
+					<div class="col-sm-4 control-label">
+						<?php echo $form->labelEx($model,'kolom'); ?>
+					</div>   
+
+					<div class="col-sm-8">
+						<?php echo $form->error($model,'kolom'); ?>
+						<?php echo $form->textField($model,'kolom',array('class'=>'form-control')); ?>
+					</div>
+					
+				</div>  
+
+				<div class="form-group">
+					
+					<div class="col-sm-4 control-label">
+						<?php echo $form->labelEx($model,'maksimal'); ?>
+					</div>   
+
+					<div class="col-sm-8">
+						<?php echo $form->error($model,'maksimal'); ?>
+						<?php echo $form->textField($model,'maksimal',array('class'=>'form-control')); ?>
+					</div>
+					
+				</div>  						
+
+			<?php endif; ?>
+
+
 			<div class="form-group">
 				
 				<div class="col-sm-4 control-label">

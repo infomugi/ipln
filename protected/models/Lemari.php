@@ -28,8 +28,8 @@ class Lemari extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('kode, deskripsi, tipe, status', 'required'),
-			array('status, tipe', 'numerical', 'integerOnly'=>true),
+			array('kode, deskripsi, tipe, status, baris, kolom, maksimal', 'required'),
+			array('status, tipe, baris, kolom, maksimal', 'numerical', 'integerOnly'=>true),
 			array('kode', 'length', 'max'=>25),
 			array('deskripsi', 'safe'),
 			// The following rule is used by search().

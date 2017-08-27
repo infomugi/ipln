@@ -7,7 +7,7 @@
 // CWebApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'E-Arsip PLN',
+	'name'=>'E-Arsip AIL PLN',
 	'theme'=>'material',
 	
 	// preloading 'log' component

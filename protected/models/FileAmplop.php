@@ -63,7 +63,7 @@ class FileAmplop extends CActiveRecord
 			'tanggal_buat' => 'Tanggal Buat',
 			'tanggal_update' => 'Tanggal Update',
 			'user_id' => 'User',
-			'file' => 'File',
+			'file' => 'File Amplop',
 			'deskripsi' => 'Deskripsi',
 			'ail_id' => 'Ail',
 			'status' => 'Status',

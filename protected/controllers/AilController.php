@@ -38,14 +38,12 @@ class AilController extends Controller
 				'expression'=>'Yii::app()->user->record->level==2',
 				),			
 			array('allow',
-				'actions'=>array('create','update','view','delete','admin'),
+				'actions'=>array('create','update','view','delete','admin','printkodemap','printverifikasi'),
 				'users'=>array('@'),
 				'expression'=>'Yii::app()->user->record->level==1',
 				),
 			array('deny',
-				'actions'=>array('create','update','view','delete','admin'),
-				'users'=>array('@'),
-				'expression'=>'!Yii::app()->user->record->level==1',
+				'users'=>array('*'),
 				),
 			);
 	}
@@ -190,4 +188,20 @@ class AilController extends Controller
 			Yii::app()->end();
 		}
 	}
+
+	public function actionPrintKodeMap($id)
+	{
+		$this->layout = "print";
+		$this->render('print',array(
+			'model'=>$this->loadModel($id),
+			));
+	}	
+
+	public function actionPrintVerifikasi($id)
+	{
+		$this->layout = "print";
+		$this->render('print_verifikasi',array(
+			'model'=>$this->loadModel($id),
+			));
+	}		
 }

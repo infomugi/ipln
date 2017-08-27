@@ -42,6 +42,8 @@ class Ail extends CActiveRecord
 		return 'ail';
 	}
 
+	public $file;
+
 	/**
 	 * @return array validation rules for model attributes.
 	 */
@@ -178,4 +180,5 @@ class Ail extends CActiveRecord
 			return "Tidak Ada";
 		}
 	}
+
 }
