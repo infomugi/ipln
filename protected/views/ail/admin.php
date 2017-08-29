@@ -28,7 +28,7 @@ $this->pageTitle='Kelola Ail';
 					// 'id_ail',
 		'tanggal_buat',
 		'kode_map',
-		array('name'=>'petugas_id','value'=>'$data->Petugas->nama'),
+		// array('name'=>'petugas_id','value'=>'$data->Petugas->nama'),
 		array('name'=>'pelanggan_id','value'=>'$data->Pelanggan->kode'),
 					// 'tanggal_update',
 		/*

@@ -28,36 +28,19 @@
 					echo "<h4><i class='fa fa-file-text'></i> ".$itu."</h4>";
 					echo "</div>";
 					$dataProvider=new CActiveDataProvider($ini,array('criteria'=>array('condition'=>'status=1 AND ail_id='.$model->id_ail)));
-					$this->widget('zii.widgets.grid.CGridView', array(
-						'id'=>$i.'-grid',
-						'dataProvider'=>$dataProvider,
-						'summaryText'=>'',
-						'itemsCssClass' => 'table-responsive table table-striped table-hover table-vcenter',
-						'columns'=>array(
 
-							// array(
-							// 	'header'=>'No',
-							// 	'value'=>'$this->grid->dataProvider->pagination->currentPage*$this->grid->dataProvider->pagination->pageSize + $row+1',
-							// 	'htmlOptions'=>array('width'=>'10px', 
-							// 		'style' => 'text-align: center;')),
-							// 'file',
+					echo "<div class='row'>";
+					foreach($dataProvider->getData() as $data){
 
-							'tanggal_buat',
-							'tanggal_update',
-							'deskripsi',
-							// array(
-							// 	'class'=>'CButtonColumn',
-							// 	'template'=>'{view}',
-							// 	'buttons'=>array(
-							// 		'view'=>
-							// 		array(
-							// 			'url'=>'Yii::app()->createUrl($ini."/view", array("id"=>$data->id))',
-							// 			),
-							// 		),
-							// 	),
-							),
-						)); 
+						echo "<div class='col-sm-6 col-lg-6'>";
+						echo "<div class='widget-simple-chart text-right card-box'>";
+						echo "<h3 class='text-success counter'>586</h3>";
+						echo "<p class='text-muted'>".$data->file."</p>";
+						echo "</div>";
+						echo "</div>";
 
+					}
+					echo "</div>";
 					?>
 
 				</div>
@@ -66,4 +49,6 @@
 
 			</div>
 		</div>
+
+
 
