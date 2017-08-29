@@ -112,4 +112,5 @@ class FileAil extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
 }

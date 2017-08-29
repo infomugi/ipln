@@ -35,7 +35,6 @@ $this->pageTitle='Kelola Pelanggan';
 				'alamat',
 				'tarif',
 				'daya',
-				'rupiah_uil',
 
 				array(
 					'header'=>'Action',

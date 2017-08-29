@@ -29,7 +29,7 @@ $this->pageTitle='Kelola Ail';
 		'tanggal_buat',
 		'kode_map',
 		array('name'=>'petugas_id','value'=>'$data->Petugas->nama'),
-		array('name'=>'pelanggan_id','value'=>'$data->Pelanggan->nama'),
+		array('name'=>'pelanggan_id','value'=>'$data->Pelanggan->kode'),
 					// 'tanggal_update',
 		/*
 		'rayon_id',
@@ -51,8 +51,61 @@ $this->pageTitle='Kelola Ail';
 		'deskripsi',
 		'status',
 		*/
+
+		array(
+			'class'=>'CButtonColumn',
+			'template'=>'{update}',
+			'header'=>'Edit AIL',
+			'buttons'=>array(
+					//Button Print
+				'update'=>
+				array(
+					'label'=>'Edit',
+					'url'=>'Yii::app()->createUrl("ail/update", array("id"=>$data->id_ail))',
+					'imageUrl'=>Yii::app()->request->baseUrl.'/images/edit.png',
+					),
+
+
+				),
+			),
+
+		array(
+			'class'=>'CButtonColumn',
+			'template'=>'{report}',
+			'header'=>'Print Map',
+			'buttons'=>array(
+					//Button Print
+				'report'=>
+				array(
+					'label'=>'Print Map',
+					'url'=>'Yii::app()->createUrl("ail/printkodemap", array("id"=>$data->id_ail))',
+					'imageUrl'=>Yii::app()->request->baseUrl.'/images/print.png',
+					),
+
+
+				),
+			),
+
+		array(
+			'class'=>'CButtonColumn',
+			'template'=>'{report}',
+			'header'=>'Print Verifikasi',
+			'buttons'=>array(
+					//Button Print
+				'report'=>
+				array(
+					'label'=>'Print Verifikasi',
+					'url'=>'Yii::app()->createUrl("ail/printverifikasi", array("id"=>$data->id_ail))',
+					'imageUrl'=>Yii::app()->request->baseUrl.'/images/print.png',
+					),
+
+
+				),
+			),		
+
 		array(
 			'header'=>'Action',
+			'template'=>'{view}{delete}',
 			'class'=>'CButtonColumn',
 			'htmlOptions'=>array('width'=>'100px', 
 				'style' => 'text-align: center;'),

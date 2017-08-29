@@ -181,4 +181,60 @@ class Ail extends CActiveRecord
 		}
 	}
 
+	public function fileData($data){
+		if($data==1){
+			return "FilePermohonan";
+		}elseif($data==2){
+			return "FilePelanggan";
+		}elseif($data==3){
+			return "FileSurvei";
+		}elseif($data==4){
+			return "FileJawaban";
+		}elseif($data==5){
+			return "FilePerjanjian";
+		}elseif($data==6){
+			return "FilePernyataan";
+		}elseif($data==7){
+			return "FileKuitansi";
+		}elseif($data==8){
+			return "FilePerintahKerja";
+		}elseif($data==9){
+			return "FileBap";
+		}elseif($data==10){
+			return "FilePdl";
+		}elseif($data==11){
+			return "FileLain";
+		}elseif($data==12){
+			return "-";
+		}
+	}
+
+	public function titleData($data){
+		if($data==1){
+			return "Surat Permohonan";
+		}elseif($data==2){
+			return "Surat Identitas Pelanggan";
+		}elseif($data==3){
+			return "Surat Data Survei";
+		}elseif($data==4){
+			return "Surat Jawaban";
+		}elseif($data==5){
+			return "Surat Perjanjian";
+		}elseif($data==6){
+			return "Surat Pernyataan";
+		}elseif($data==7){
+			return "Surat Kuitansi";
+		}elseif($data==8){
+			return "Surat Perintah Kerja";
+		}elseif($data==9){
+			return "Surat BAP";
+		}elseif($data==10){
+			return "Surat PDL";
+		}elseif($data==11){
+			return "Surat Lain-lain";
+		}elseif($data==12){
+			return "-";
+		}
+	}
+
 }

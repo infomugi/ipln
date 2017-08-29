@@ -36,7 +36,6 @@ $this->pageTitle='Detail Pelanggan';
 								'alamat',
 								'tarif',
 								'daya',
-								'rupiah_uil',
 								array(
 									'name'=>'status',
 									'value'=>Petugas::model()->status($model->status)

@@ -69,7 +69,7 @@
 					<?php echo $form->error($model,'tarif'); ?>
 					<?php
 					echo $form->dropDownlist($model,'tarif',
-						array(''=>'-- Pilih Tarif --','R1'=>'R1','R2'=>'R2','R3'=>'R3'), 
+						array(''=>'-- Pilih Tarif --','R1'=>'R1','R1T'=>'R1T'), 
 						array('class'=>'form-control')
 						);
 						?>
@@ -88,24 +88,33 @@
 						<?php echo $form->error($model,'daya'); ?>
 						<?php
 						echo $form->dropDownlist($model,'daya',
-							array(''=>'-- Pilih Daya --','1'=>'450','2'=>'900','3'=>'1400','4'=>'2200'), 
+							array(
+								''=>'-- Pilih Daya --',
+								'1'=>'450',
+								'2'=>'900',
+								'3'=>'1300',
+								'4'=>'2200',
+								'5'=>'3300',
+								'6'=>'3500',
+								'7'=>'4400',
+								'8'=>'5500',
+								'9'=>'6600',
+								'10'=>'7700',
+								'11'=>'10600',
+								'12'=>'13200',
+								'13'=>'16500',
+								'14'=>'23000',
+								'15'=>'33000',
+								'16'=>'41500',
+								'17'=>'53000',
+								'18'=>'66000',
+								'19'=>'82500',
+								'20'=>'131000',
+								'21'=>'164000',
+								), 
 							array('class'=>'form-control')
 							);
 							?>
-						</div>
-
-					</div>  
-
-
-					<div class="form-group">
-
-						<div class="col-sm-4 control-label">
-							<?php echo $form->labelEx($model,'rupiah_uil'); ?>
-						</div>   
-
-						<div class="col-sm-8">
-							<?php echo $form->error($model,'rupiah_uil'); ?>
-							<?php echo $form->textField($model,'rupiah_uil',array('class'=>'form-control')); ?>
 						</div>
 
 					</div>  
