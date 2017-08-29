@@ -237,4 +237,32 @@ class Ail extends CActiveRecord
 		}
 	}
 
+	public function direktoriFile($data){
+		if($data==1){
+			return "surat-permohonan";
+		}elseif($data==2){
+			return "surat-pelanggan";
+		}elseif($data==3){
+			return "surat-survei";
+		}elseif($data==4){
+			return "surat-jawaban";
+		}elseif($data==5){
+			return "surat-perjanjian";
+		}elseif($data==6){
+			return "surat-pernyataan";
+		}elseif($data==7){
+			return "surat-kuitansi";
+		}elseif($data==8){
+			return "surat-perintah-kerja";
+		}elseif($data==9){
+			return "surat-bap";
+		}elseif($data==10){
+			return "surat-pdl";
+		}elseif($data==11){
+			return "surat-lain";
+		}elseif($data==12){
+			return "-";
+		}
+	}
+
 }
