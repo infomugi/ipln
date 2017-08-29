@@ -28,15 +28,10 @@ class AilController extends Controller
 	{
 		return array(
 			array('allow',
-				'actions'=>array('view','index'),
+				'actions'=>array('create','update','view','delete','admin','printkodemap','printverifikasi'),
 				'users'=>array('@'),
-				'expression'=>'Yii::app()->user->record->level==3',
-				),
-			array('allow',
-				'actions'=>array('create','update','view','delete'),
-				'users'=>array('@'),
-				'expression'=>'Yii::app()->user->record->level==2',
-				),			
+				'expression'=>'Yii::app()->user->record->level==4',
+				),		
 			array('allow',
 				'actions'=>array('create','update','view','delete','admin','printkodemap','printverifikasi'),
 				'users'=>array('@'),

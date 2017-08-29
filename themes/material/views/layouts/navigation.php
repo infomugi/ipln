@@ -67,90 +67,37 @@
             'itemCssClass'=>'item-test',
             'encodeLabel'=>false,
             'items'=>array(
-             // array('label'=>'Home', 'url'=>array('/site/index'), 'visible'=>!Yii::app()->user->isGuest),
-             // array('label'=>'Kategori', 'url'=>array('/kategori/admin'), 'visible'=>!Yii::app()->user->isGuest),
-             // array('label'=>'Jabatan', 'url'=>array('/jabatan/admin'), 'visible'=>!Yii::app()->user->isGuest),
-             // array('label'=>'Rayon', 'url'=>array('/divisi/admin'), 'visible'=>!Yii::app()->user->isGuest),
              array('label'=>'Registrasi AIL', 'url'=>array('/site/registrasi'), 'visible'=>!Yii::app()->user->isGuest),
              array('label'=>'Kelola AIL', 'url'=>array('/ail/admin'), 'visible'=>!Yii::app()->user->isGuest),
              array('label'=>'Lemari', 'url'=>array('/lemari/admin'), 'visible'=>!Yii::app()->user->isGuest),
              array('label'=>'Pelanggan', 'url'=>array('/pelanggan/admin'), 'visible'=>!Yii::app()->user->isGuest),
              array('label'=>'Petugas', 'url'=>array('/petugas/admin'), 'visible'=>!Yii::app()->user->isGuest),
-             // array('label'=>'Report', 'url'=>array('/event/report'), 'visible'=>!Yii::app()->user->isGuest),
              ),
             )); 
 
-        }else if(YII::app()->user->getLevelAccess()==2){
+        }else{
 
-         $this->widget('zii.widgets.CMenu',array(
-          'htmlOptions' => array( 'class' => 'navigation-menu submenu' ),
-          'submenuHtmlOptions'=>array('class'=>'dropdown-menu'),
-          'itemCssClass'=>'item-test',
-          'encodeLabel'=>false,
-          'items'=>array(
-            array('label'=>'Home', 'url'=>array('/site/index'), 'visible'=>!Yii::app()->user->isGuest),
-            array('label'=>'Daftar Tugas', 'url'=>array('/tugas/my'), 'visible'=>!Yii::app()->user->isGuest),
-            array('label'=>'Daftar Kegiatan', 'url'=>array('/event/index'), 'visible'=>!Yii::app()->user->isGuest),
-            array('label'=>'Daftar Divisi', 'url'=>array('/divisi/index'), 'visible'=>!Yii::app()->user->isGuest),
-            array('label'=>'Daftar Petugas', 'url'=>array('/petugas/index'), 'visible'=>!Yii::app()->user->isGuest),
-            array('label'=>'Profile', 'url'=>array('/petugas/view&id='.Yii::app()->user->id), 'visible'=>!Yii::app()->user->isGuest),
-            ),
-          )); 
+          $this->widget('zii.widgets.CMenu',array(
+            'htmlOptions' => array( 'class' => 'navigation-menu submenu' ),
+            'submenuHtmlOptions'=>array('class'=>'dropdown-menu'),
+            'itemCssClass'=>'item-test',
+            'encodeLabel'=>false,
+            'items'=>array(
+             array('label'=>'Registrasi AIL', 'url'=>array('/site/registrasi'), 'visible'=>!Yii::app()->user->isGuest),
+             array('label'=>'Kelola AIL', 'url'=>array('/ail/admin'), 'visible'=>!Yii::app()->user->isGuest),
+             array('label'=>'Pelanggan', 'url'=>array('/pelanggan/admin'), 'visible'=>!Yii::app()->user->isGuest),
+             ),
+            )); 
 
-       }else if(YII::app()->user->getLevelAccess()==3){
+        }
 
-         $this->widget('zii.widgets.CMenu',array(
-          'htmlOptions' => array( 'class' => 'navigation-menu submenu' ),
-          'submenuHtmlOptions'=>array('class'=>'dropdown-menu'),
-          'itemCssClass'=>'item-test',
-          'encodeLabel'=>false,
-          'items'=>array(
-            array('label'=>'Home', 'url'=>array('/site/index'), 'visible'=>!Yii::app()->user->isGuest),
-            array('label'=>'Buat Kegiatan', 'url'=>array('/event/new'), 'visible'=>!Yii::app()->user->isGuest),
-            array('label'=>'Daftar Tugas', 'url'=>array('/tugas/my'), 'visible'=>!Yii::app()->user->isGuest),
-            array('label'=>'Daftar Kegiatan', 'url'=>array('/event/divisi'), 'visible'=>!Yii::app()->user->isGuest),
-            array('label'=>'Monitoring', 'url'=>array('/event/monitor'), 'visible'=>!Yii::app()->user->isGuest),
-            array('label'=>'Team', 'url'=>array('/petugas/list'), 'visible'=>!Yii::app()->user->isGuest),
-            array('label'=>'Profile', 'url'=>array('/petugas/view&id='.Yii::app()->user->id), 'visible'=>!Yii::app()->user->isGuest),
-            ),
-          )); 
-
-       }else if(YII::app()->user->getLevelAccess()==4){
-
-         $this->widget('zii.widgets.CMenu',array(
-          'htmlOptions' => array( 'class' => 'navigation-menu submenu' ),
-          'submenuHtmlOptions'=>array('class'=>'dropdown-menu'),
-          'itemCssClass'=>'item-test',
-          'encodeLabel'=>false,
-          'items'=>array(
-            array('label'=>'Home', 'url'=>array('/site/index'), 'visible'=>!Yii::app()->user->isGuest),
-            array('label'=>'Daftar Kegiatan', 'url'=>array('/event/divisi'), 'visible'=>!Yii::app()->user->isGuest),
-            array('label'=>'Daftar Tugas', 'url'=>array('/tugas/my'), 'visible'=>!Yii::app()->user->isGuest),
-            array('label'=>'Profile', 'url'=>array('/petugas/view&id='.Yii::app()->user->id), 'visible'=>!Yii::app()->user->isGuest),
-            ),
-          ));        
-
-       }else{
-
-         $this->widget('zii.widgets.CMenu',array(
-          'htmlOptions' => array( 'class' => 'navigation-menu submenu' ),
-          'submenuHtmlOptions'=>array('class'=>'dropdown-menu'),
-          'itemCssClass'=>'item-test',
-          'encodeLabel'=>false,
-          'items'=>array(
-            array('label'=>'Home', 'url'=>array('/site/index'), 'visible'=>!Yii::app()->user->isGuest),
-            ),
-          )); 
-
-       }
-
-       ?>
+        ?>
 
 
-     </ul>
-     <!-- End navigation menu -->
-   </div>
- </div>
+      </ul>
+      <!-- End navigation menu -->
+    </div>
+  </div>
 </div>
 </header>
 <!-- End Navigation Bar-->

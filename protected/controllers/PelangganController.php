@@ -16,7 +16,7 @@ class PelangganController extends Controller
 		return array(
 			'accessControl', // perform access control for CRUD operations
 			// 'postOnly + delete', // we only allow deletion via POST request
-		);
+			);
 	}
 
 	/**
@@ -27,25 +27,20 @@ class PelangganController extends Controller
 	public function accessRules()
 	{
 		return array(
+			
 			array('allow',
-				'actions'=>array('view','index'),
-				'users'=>array('@'),
-				'expression'=>'Yii::app()->user->record->level==3',
-				),
-			array('allow',
-				'actions'=>array('create','update','view','delete'),
-				'users'=>array('@'),
-				'expression'=>'Yii::app()->user->record->level==2',
-				),			
-			array('allow',
-				'actions'=>array('create','update','view','delete','admin'),
+				'actions'=>array('create','update','view','delete','admin','index'),
 				'users'=>array('@'),
 				'expression'=>'Yii::app()->user->record->level==1',
 				),
-			array('deny',
-				'actions'=>array('create','update','view','delete','admin'),
+			array('allow',
+				'actions'=>array('create','update','view','delete','admin','index'),
 				'users'=>array('@'),
-				'expression'=>'!Yii::app()->user->record->level==1',
+				'expression'=>'Yii::app()->user->record->level==4',
+				),
+
+			array('deny',
+				'users'=>array('*'),
 				),
 			);
 	}
@@ -58,7 +53,7 @@ class PelangganController extends Controller
 	{
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
-		));
+			));
 	}
 
 	/**
@@ -81,7 +76,7 @@ class PelangganController extends Controller
 
 		$this->render('create',array(
 			'model'=>$model,
-		));
+			));
 	}
 
 	/**
@@ -105,7 +100,7 @@ class PelangganController extends Controller
 
 		$this->render('update',array(
 			'model'=>$model,
-		));
+			));
 	}
 
 	/**
@@ -130,7 +125,7 @@ class PelangganController extends Controller
 		$dataProvider=new CActiveDataProvider('Pelanggan');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
-		));
+			));
 	}
 
 	/**
@@ -145,7 +140,7 @@ class PelangganController extends Controller
 
 		$this->render('admin',array(
 			'model'=>$model,
-		));
+			));
 	}
 
 	/**
