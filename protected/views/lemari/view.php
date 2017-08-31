@@ -37,7 +37,7 @@ $this->pageTitle='Detail Lemari - '.$model->kode;
 								if($quota >= 1 && $quota <= $model->maksimal){
 
 									echo CHtml::link("Laci " . $model->kode.$x.'-'.$i, 
-										array('lemari/view', 'id'=>$model->id_lemari,
+										array('lemari/list', 'kode'=>$model->kode.$x.'-'.$i,
 											), array('class' => 'btn btn-sm btn-'.Lemari::model()->tipe($model->tipe).' btn-flat', 'title'=>$model->deskripsi . " - " . $model->kode.$x.'-'.$i));
 								}else{
 									echo "<div class='label label-warning'>Masih Kosong</div>";

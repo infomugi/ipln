@@ -33,8 +33,45 @@ $this->pageTitle='Kelola Pelanggan';
 				'kode',
 				'nama',
 				'alamat',
-				'tarif',
-				'daya',
+
+				array(
+					'name'=>'tarif',
+					'filter'=>array(
+						'0'=>'- Pilih Tarif -',
+						'1'=>'R1',
+						'2'=>'R1T'
+						),
+					'value'=>'Pelanggan::model()->tarif($data->tarif)',
+					),
+
+				array(
+					'name'=>'daya',
+					'filter'=>array(
+						'0'=>'- Pilih Daya -',
+						'1'=>'450',
+						'2'=>'900',
+						'3'=>'1300',
+						'4'=>'2200',
+						'5'=>'3300',
+						'6'=>'3500',
+						'7'=>'4400',
+						'8'=>'5500',
+						'9'=>'6600',
+						'10'=>'7700',
+						'11'=>'10600',
+						'12'=>'13200',
+						'13'=>'16500',
+						'14'=>'23000',
+						'15'=>'33000',
+						'16'=>'41500',
+						'17'=>'53000',
+						'18'=>'66000',
+						'19'=>'82500',
+						'20'=>'131000',
+						'21'=>'164000',
+						),
+					'value'=>'Pelanggan::model()->data($data->daya)',
+					),
 
 				array(
 					'header'=>'Action',

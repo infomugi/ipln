@@ -27,7 +27,10 @@ class PelangganController extends Controller
 	public function accessRules()
 	{
 		return array(
-			
+			array('allow',
+				'actions'=>array('search'),
+				'users'=>array('@'),
+				),			
 			array('allow',
 				'actions'=>array('create','update','view','delete','admin','index'),
 				'users'=>array('@'),
@@ -170,4 +173,42 @@ class PelangganController extends Controller
 			Yii::app()->end();
 		}
 	}
+
+	public function actionSearch()
+	{
+		$id_pelanggan='';
+		$nama='';
+		$kode='';
+		$alamat='';
+		$tarif='';
+		$daya='';
+
+		$criteria = new CDbCriteria();
+		$criteria->condition = 'status=:status';
+		$criteria->params = array(':status'=>1);
+		$itu = Pelanggan::model()->findAll($criteria);		
+
+		foreach($itu as $i=>$ii)
+		{
+			if($_POST['data']==$ii->id_pelanggan)
+			{
+				$id_pelanggan=$ii->id_pelanggan;
+				$nama=$ii->nama;
+				$kode=$ii->kode;
+				$alamat=$ii->alamat;
+				$tarif=Pelanggan::model()->tarif($ii->tarif);
+				$daya=Pelanggan::model()->data($ii->daya);
+			}		      
+		}        
+
+		echo CJSON::encode(array(
+			'id_pelanggan'=>$id_pelanggan,
+			'nama'=>$nama,
+			'kode'=>$kode,
+			'alamat'=>$alamat,
+			'tarif'=>$tarif,
+			'daya'=>$daya,
+			));
+		Yii::app()->end();
+	}		
 }

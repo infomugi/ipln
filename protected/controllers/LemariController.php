@@ -28,6 +28,10 @@ class LemariController extends Controller
 	{
 		return array(
 			array('allow',
+				'actions'=>array('list'),
+				'users'=>array('@'),
+				),			
+			array('allow',
 				'actions'=>array('create','update','view','delete','admin','index','changeimage','enable','disable','detail'),
 				'users'=>array('@'),
 				'expression'=>'Yii::app()->user->record->level==1',
@@ -209,5 +213,14 @@ class LemariController extends Controller
 		$model->status = 0;
 		$model->save();
 		$this->redirect(array('index'));
-	}			
+	}		
+
+	public function actionList($kode)
+	{
+		$dataProvider=new CActiveDataProvider('Ail',array('criteria'=>array('condition'=>'kode_rak="'.$kode.'"')));
+		$this->render('list',array(
+			'dataProvider'=>$dataProvider,
+			'kode'=>$kode,
+			));
+	}	
 }

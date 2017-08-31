@@ -28,7 +28,7 @@ $this->pageTitle='Cetak Hasil Verifikasi Berkas - '.$model->kode_map;
 				array('label'=>'Alamat','value'=>$model->Pelanggan->alamat),
 				array('label'=>'Tarif','value'=>$model->Pelanggan->tarif),
 				array('label'=>'Daya','value'=>$model->Pelanggan->daya),
-				array('label'=>'Rupiah UIL','value'=>$model->Pelanggan->rupiah_uil),
+				// array('label'=>'Rupiah UIL','value'=>$model->Pelanggan->rupiah_uil),
 				),
 				)); ?>
 

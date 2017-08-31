@@ -87,16 +87,16 @@ $this->pageTitle='Detail Ail - Kode MAP - '.$model->kode_map;
 																								</li>
 
 																								<li>
-																									<?php echo CHtml::link('Surat BAP', 
+																									<?php echo CHtml::link('Surat BA', 
 																										array('filebap/create', 'id'=>$model->id_ail,'name'=>"surat-bap",
-																											), array('title'=>'Upload Surat BAP'));
+																											), array('title'=>'Upload Surat BA'));
 																											?>
 																										</li>
 
 																										<li>
-																											<?php echo CHtml::link('Surat PDL', 
+																											<?php echo CHtml::link('Surat SLO', 
 																												array('filepdl/create', 'id'=>$model->id_ail,'name'=>"surat-pdl",
-																													), array('title'=>'Upload Surat PDL'));
+																													), array('title'=>'Upload Surat SLO'));
 																													?>
 																												</li>
 
@@ -137,7 +137,7 @@ $this->pageTitle='Detail Ail - Kode MAP - '.$model->kode_map;
 																																			array('label'=>'Alamat','value'=>$model->Pelanggan->alamat),
 																																			array('label'=>'Tarif','value'=>$model->Pelanggan->tarif),
 																																			array('label'=>'Daya','value'=>$model->Pelanggan->daya),
-																																			array('label'=>'Rupiah UIL','value'=>$model->Pelanggan->rupiah_uil),
+																																			// array('label'=>'Rupiah UIL','value'=>$model->Pelanggan->rupiah_uil),
 																																			),
 																																			)); ?>
 

@@ -35,6 +35,11 @@ $this->pageTitle='Manage Lemari';
 				'kode',
 				'deskripsi',
 							// 'status',
+
+				array('header'=>'Jumlah Laci','value'=>'$data->baris * $data->kolom'),
+				array('header'=>'Maksimal Dokumen Per Laci','value'=>'$data->maksimal'),
+				array('header'=>'Total Kapasitas Dokumen','value'=>'($data->baris * $data->kolom) * $data->maksimal'),
+
 				array(
 					'class'=>'CButtonColumn',
 					'template'=>'{view}{update}',

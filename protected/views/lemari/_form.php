@@ -121,7 +121,7 @@
 						<?php echo $form->error($model,'status'); ?>
 						<?php
 						echo $form->dropDownlist($model,'status',
-							array(''=>'-- Pilih Warna --','1'=>'Aktif','0'=>'Tidak Aktif'), 
+							array(''=>'-- Pilih Status --','1'=>'Aktif','0'=>'Tidak Aktif'), 
 							array('class'=>'form-control')
 							);
 							?>

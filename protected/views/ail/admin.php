@@ -29,7 +29,8 @@ $this->pageTitle='Kelola Ail';
 		'tanggal_buat',
 		'kode_map',
 		// array('name'=>'petugas_id','value'=>'$data->Petugas->nama'),
-		array('name'=>'pelanggan_id','value'=>'$data->Pelanggan->kode'),
+		array('name'=>'pelanggan_id','value'=>'$data->Pelanggan->kode','filter' => CHtml::activeTextField($model, 'searchKode'),),
+
 					// 'tanggal_update',
 		/*
 		'rayon_id',

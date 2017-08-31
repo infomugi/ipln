@@ -42,7 +42,7 @@ class Ail extends CActiveRecord
 		return 'ail';
 	}
 
-	public $file;
+	public $file, $searchKode, $searchNama;
 
 	/**
 	 * @return array validation rules for model attributes.
@@ -61,6 +61,8 @@ class Ail extends CActiveRecord
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id_ail, tanggal_buat, tanggal_update, petugas_id, pelanggan_id, kode_rak, rayon_id, lemari_id, rak_id, kolom_id, baris_id, kondisi_amplop, kondisi_ail, surat_surat_permohonan, surat_identitas_pelanggan, surat_data_survei, surat_jawaban, surat_perjanjian, surat_pernyataan, surat_kuitansi, surat_perintah_kerja, surat_bap, surat_pdl, surat_lainlain, deskripsi, status', 'safe', 'on'=>'search'),
+			array('searchKode', 'safe'),
+			array('searchNama', 'safe'),
 			);
 	}
 
@@ -104,8 +106,8 @@ class Ail extends CActiveRecord
 			'surat_pernyataan' => 'Surat Pernyataan',
 			'surat_kuitansi' => 'Surat Kuitansi',
 			'surat_perintah_kerja' => 'Surat Perintah Kerja',
-			'surat_bap' => 'Surat Bap',
-			'surat_pdl' => 'Surat Pdl',
+			'surat_bap' => 'Surat BA',
+			'surat_pdl' => 'Surat SLO',
 			'surat_lainlain' => 'Surat Lainlain',
 			'deskripsi' => 'Keterangan',
 			'status' => 'Status',
@@ -156,6 +158,10 @@ class Ail extends CActiveRecord
 		$criteria->compare('surat_lainlain',$this->surat_lainlain);
 		$criteria->compare('deskripsi',$this->deskripsi,true);
 		$criteria->compare('status',$this->status);
+
+		$criteria->with = array('Pelanggan',);
+		$criteria->addSearchCondition('Pelanggan.kode', $this->searchKode);
+		$criteria->addSearchCondition('Pelanggan.name', $this->searchNama);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -227,9 +233,9 @@ class Ail extends CActiveRecord
 		}elseif($data==8){
 			return "Surat Perintah Kerja";
 		}elseif($data==9){
-			return "Surat BAP";
+			return "Surat BA";
 		}elseif($data==10){
-			return "Surat PDL";
+			return "Surat SLO";
 		}elseif($data==11){
 			return "Surat Lain-lain";
 		}elseif($data==12){

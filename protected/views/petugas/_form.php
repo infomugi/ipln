@@ -129,7 +129,13 @@
 							<?php echo $form->error($model,'level'); ?>
 							<?php
 							echo $form->dropDownlist($model,'level',
-								array(''=>'-- Pilih Hak Akses --','1'=>'Superadmin','2'=>'Pimpinan','3'=>'Kepala Staff','4'=>'Staff'), 
+								array(
+									''=>'-- Pilih Hak Akses --',
+									'1'=>'Superadmin',
+									// '2'=>'Pimpinan',
+									// '3'=>'Kepala Staff',
+									'4'=>'Petugas'
+									), 
 								array('class'=>'form-control')
 								);
 								?>

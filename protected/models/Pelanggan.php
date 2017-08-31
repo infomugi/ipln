@@ -115,15 +115,57 @@ class Pelanggan extends CActiveRecord
 		return parent::model($className);
 	}
 
+	public function tarif($data){
+		if($data==1){
+			return "R1";
+		}else{
+			return "R1T";
+		}
+	}
+
 	public function data($data){
 		if($data==1){
 			return "450";
 		}elseif($data==2){
 			return "900";
 		}elseif($data==3){
-			return "1200";
+			return "1300";
 		}elseif($data==4){
 			return "2200";
+		}elseif($data==5){
+			return "3300";
+		}elseif($data==6){
+			return "3500";
+		}elseif($data==7){
+			return "4400";
+		}elseif($data==8){
+			return "5500";
+		}elseif($data==9){
+			return "6600";
+		}elseif($data==10){
+			return "7700";
+		}elseif($data==11){
+			return "10600";
+		}elseif($data==12){
+			return "13200";
+		}elseif($data==13){
+			return "16500";
+		}elseif($data==14){
+			return "23000";
+		}elseif($data==15){
+			return "33000";
+		}elseif($data==16){
+			return "41500";
+		}elseif($data==17){
+			return "53000";
+		}elseif($data==18){
+			return "66000";
+		}elseif($data==19){
+			return "82500";
+		}elseif($data==20){
+			return "131000";
+		}elseif($data==21){
+			return "164000";
 		}
 	}
 }

@@ -34,8 +34,17 @@ $this->pageTitle='Detail Pelanggan';
 								'kode',
 								'nama',
 								'alamat',
-								'tarif',
-								'daya',
+
+								array(
+									'name'=>'tarif',
+									'value'=>Pelanggan::model()->tarif($model->tarif)
+									),
+
+								array(
+									'name'=>'daya',
+									'value'=>Pelanggan::model()->data($model->daya)
+									),
+
 								array(
 									'name'=>'status',
 									'value'=>Petugas::model()->status($model->status)

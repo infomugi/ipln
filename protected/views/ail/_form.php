@@ -33,16 +33,96 @@ $nomorurut = 1 + $urut;
 
 				<div class="col-sm-8">
 					<?php echo $form->error($model,'pelanggan_id'); ?>
-					<?php echo $form->dropDownList($model, "pelanggan_id",
-						CHtml::listData(Pelanggan::model()->findAll(),
-							'id_pelanggan', 'nama'
-							),
-						array('class'=>'form-control'),
-						array("empty"=>"-- Pilih Pelanggan --")
-						); ?> 
+					<?php 
+					echo $form->dropDownList($model, "pelanggan_id",
+						CHtml::encodeArray(CHtml::listData(Pelanggan::model()->findall(array('condition'=>'status=1')), 'id_pelanggan', 'kode')),
+						array(
+							"empty"=>"- Pilih Kode Pelanggan -", 
+							'class'=>'form-control select2',
+							'ajax' => array(
+								'type'=>'POST',
+								'dataType'=>'json',
+								'url'=>CController::createUrl('pelanggan/search'),
+								'data' => "js:{data:$(this).val()}",
+								'success'=>'function(data){
+									$("#Ail_pelanggan_id").val(data.id_pelanggan);
+									$("#kode").val(data.kode);
+									$("#nama").val(data.nama);
+									$("#alamat").val(data.alamat);
+									$("#tarif").val(data.tarif);
+									$("#daya").val(data.daya);
+									$("#RequestSchedule_task").focus();
+								}',),							
+							)
+						); 
+					?> 					
 				</div>
 
 			</div>  
+
+
+			<div class="form-group">
+
+				<div class="col-sm-4 control-label">
+					Kode Rekening
+				</div>   
+
+				<div class="col-sm-8">
+					<input type="text" class="form-control" id="kode" readOnly="true">
+				</div>
+
+			</div>  	
+
+
+			<div class="form-group">
+
+				<div class="col-sm-4 control-label">
+					Nama
+				</div>   
+
+				<div class="col-sm-8">
+					<input type="text" class="form-control" id="nama" readOnly="true">
+				</div>
+
+			</div>  
+
+
+			<div class="form-group">
+
+				<div class="col-sm-4 control-label">
+					Alamat
+				</div>   
+
+				<div class="col-sm-8">
+					<input type="text" class="form-control" id="alamat" readOnly="true">
+				</div>
+
+			</div>  
+
+
+			<div class="form-group">
+
+				<div class="col-sm-4 control-label">
+					Tarif
+				</div>   
+
+				<div class="col-sm-8">
+					<input type="text" class="form-control" id="tarif" readOnly="true">
+				</div>
+
+			</div>  
+
+			<div class="form-group">
+
+				<div class="col-sm-4 control-label">
+					Daya
+				</div>   
+
+				<div class="col-sm-8">
+					<input type="text" class="form-control" id="daya" readOnly="true">
+				</div>
+
+			</div>  											
 
 
 			<div class="form-group">

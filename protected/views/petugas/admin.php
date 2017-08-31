@@ -31,6 +31,11 @@ $this->menu=array(
 
 					array(
 						'name'=>'level',
+						'filter'=>array(
+							'0'=>'-',
+							'1'=>'Superadmin',
+							'4'=>'Petugas'
+							),
 						'value'=>'Petugas::model()->level($data->level)'
 						),
 
