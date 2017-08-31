@@ -18,7 +18,7 @@
     <link href="<?php echo $baseUrl;?>/assets/plugins/datatables/fixedHeader.bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo $baseUrl;?>/assets/plugins/datatables/responsive.bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo $baseUrl;?>/assets/plugins/datatables/scroller.bootstrap.min.css" rel="stylesheet" type="text/css" />
-     <link href="<?php echo $baseUrl;?>/assets/plugins/jquery-circliful/css/jquery.circliful.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo $baseUrl;?>/assets/plugins/jquery-circliful/css/jquery.circliful.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo $baseUrl;?>/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo $baseUrl;?>/assets/css/core.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo $baseUrl;?>/assets/css/components.css" rel="stylesheet" type="text/css" />
@@ -27,6 +27,7 @@
     <link href="<?php echo $baseUrl;?>/assets/css/menu.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo $baseUrl;?>/assets/css/responsive.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo $baseUrl;?>/assets/fonts/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo $baseUrl;?>/assets/plugins/select2/select2.css" rel="stylesheet" type="text/css" />
 
     <link rel="Shortcut Icon" href="<?php echo yii::app()->request->baseurl; ?>/assets/theme/images/logo.jpg" type="image/x-icon" />
 
@@ -41,4 +42,4 @@
 
     </head>
 
-     <body class="fixed-left">
+    <body class="fixed-left">
