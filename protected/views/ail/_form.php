@@ -64,7 +64,7 @@ $nomorurut = 1 + $urut;
 			<div class="form-group">
 
 				<div class="col-sm-4 control-label">
-					Kode Rekening
+					Kode Pelanggan
 				</div>   
 
 				<div class="col-sm-8">
