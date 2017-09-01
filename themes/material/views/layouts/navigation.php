@@ -85,7 +85,7 @@
             'items'=>array(
              array('label'=>'Registrasi AIL', 'url'=>array('/site/registrasi'), 'visible'=>!Yii::app()->user->isGuest),
              array('label'=>'Kelola AIL', 'url'=>array('/ail/admin'), 'visible'=>!Yii::app()->user->isGuest),
-             array('label'=>'Pelanggan', 'url'=>array('/pelanggan/admin'), 'visible'=>!Yii::app()->user->isGuest),
+             array('label'=>'Lemari', 'url'=>array('/lemari/admin'), 'visible'=>!Yii::app()->user->isGuest),
              ),
             )); 
 
