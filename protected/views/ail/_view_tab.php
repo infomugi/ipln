@@ -10,8 +10,8 @@
 		<li><a href="#6a" data-toggle="tab">Pernyataan</a></li>
 		<li><a href="#7a" data-toggle="tab">Kuitansi</a></li>
 		<li><a href="#8a" data-toggle="tab">Perintah Kerja</a></li>
-		<li><a href="#9a" data-toggle="tab">BAP</a></li>
-		<li><a href="#10a" data-toggle="tab">PDL</a></li>
+		<li><a href="#9a" data-toggle="tab">BA</a></li>
+		<li><a href="#10a" data-toggle="tab">SLO</a></li>
 		<li><a href="#11a" data-toggle="tab">Lain-Lain</a></li>
 	</ul>
 

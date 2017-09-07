@@ -39,7 +39,11 @@ $this->pageTitle='Kelola Pelanggan';
 					'filter'=>array(
 						'0'=>'- Pilih Tarif -',
 						'1'=>'R1',
-						'2'=>'R1T'
+						'2'=>'R2',
+						'3'=>'R1T',
+						'4'=>'R2T',
+						'5'=>'B1',
+						'6'=>'B1T',
 						),
 					'value'=>'Pelanggan::model()->tarif($data->tarif)',
 					),

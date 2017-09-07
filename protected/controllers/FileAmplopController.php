@@ -90,7 +90,7 @@ class FileAmplopController extends Controller
 			if(strlen(trim(CUploadedFile::getInstance($model,'file'))) > 0) 
 			{ 
 				$tmp=CUploadedFile::getInstance($model,'file'); 
-				$model->file=YII::app()->user->id."-File".ucfirst($name)."-".$this->loadAil($id).'.'.$tmp->extensionName; 
+								$model->file=YII::app()->user->id."-File".ucfirst($name)."-".$this->loadAil($id).'-'.mktime().'.'.$tmp->extensionName; 
 			}
 
 			if($model->save()){

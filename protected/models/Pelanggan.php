@@ -118,10 +118,18 @@ class Pelanggan extends CActiveRecord
 	public function tarif($data){
 		if($data==1){
 			return "R1";
-		}else{
+		}elseif($data==2){
+			return "R2";
+		}elseif($data==3){
 			return "R1T";
+		}elseif($data==4){
+			return "R2T";
+		}elseif($data==5){
+			return "B1";
+		}elseif($data==6){
+			return "B1T";
 		}
-	}
+	}	
 
 	public function data($data){
 		if($data==1){

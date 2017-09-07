@@ -69,7 +69,14 @@
 					<?php echo $form->error($model,'tarif'); ?>
 					<?php
 					echo $form->dropDownlist($model,'tarif',
-						array(''=>'-- Pilih Tarif --','R1'=>'R1','R1T'=>'R1T'), 
+						array(''=>'-- Pilih Tarif --',
+							'1'=>'R1',
+							'2'=>'R2',
+							'3'=>'R1T',
+							'4'=>'R2T',
+							'5'=>'B1',
+							'6'=>'B1T',
+							), 
 						array('class'=>'form-control')
 						);
 						?>
