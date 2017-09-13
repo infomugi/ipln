@@ -114,3 +114,12 @@ $this->pageTitle='Kelola Ail';
 		),
 		)); ?>
 
+
+<?php echo CHtml::link('Registrasi AIL',
+	array('site/registrasi'),
+	array('class' => 'btn btn-warning pull-left btn-flat'));
+	?>
+
+	<BR>
+		<BR>
+

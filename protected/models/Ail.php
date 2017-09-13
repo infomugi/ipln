@@ -58,6 +58,7 @@ class Ail extends CActiveRecord
 			array('kode_rak, kode_map', 'length', 'max'=>25),
 			array('deskripsi', 'length', 'max'=>255),
 			array('deskripsi', 'safe'),
+			array('pelanggan_id', 'unique'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id_ail, tanggal_buat, tanggal_update, petugas_id, pelanggan_id, kode_rak, rayon_id, lemari_id, rak_id, kolom_id, baris_id, kondisi_amplop, kondisi_ail, surat_surat_permohonan, surat_identitas_pelanggan, surat_data_survei, surat_jawaban, surat_perjanjian, surat_pernyataan, surat_kuitansi, surat_perintah_kerja, surat_bap, surat_pdl, surat_lainlain, deskripsi, status', 'safe', 'on'=>'search'),
@@ -158,6 +159,7 @@ class Ail extends CActiveRecord
 		$criteria->compare('surat_lainlain',$this->surat_lainlain);
 		$criteria->compare('deskripsi',$this->deskripsi,true);
 		$criteria->compare('status',$this->status);
+		$criteria->order = 'id_ail DESC';
 
 		$criteria->with = array('Pelanggan',);
 		$criteria->addSearchCondition('Pelanggan.kode', $this->searchKode);
@@ -177,6 +179,34 @@ class Ail extends CActiveRecord
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
+	}
+
+	public function countFile($data,$id){
+		if($data==1){
+			return FilePermohonan::model()->countByAttributes(array('ail_id'=>$id));
+		}elseif($data==2){
+			return FilePelanggan::model()->countByAttributes(array('ail_id'=>$id));
+		}elseif($data==3){
+			return FileSurvei::model()->countByAttributes(array('ail_id'=>$id));
+		}elseif($data==4){
+			return FileJawaban::model()->countByAttributes(array('ail_id'=>$id));
+		}elseif($data==5){
+			return FilePerjanjian::model()->countByAttributes(array('ail_id'=>$id));
+		}elseif($data==6){
+			return FilePernyataan::model()->countByAttributes(array('ail_id'=>$id));
+		}elseif($data==7){
+			return FileKuitansi::model()->countByAttributes(array('ail_id'=>$id));
+		}elseif($data==8){
+			return FilePerintahKerja::model()->countByAttributes(array('ail_id'=>$id));
+		}elseif($data==9){
+			return FileBap::model()->countByAttributes(array('ail_id'=>$id));
+		}elseif($data==10){
+			return FilePdl::model()->countByAttributes(array('ail_id'=>$id));
+		}elseif($data==11){
+			return FileLain::model()->countByAttributes(array('ail_id'=>$id));
+		}elseif($data==12){
+			return "-";
+		}
 	}
 
 	public function status($data){
@@ -270,5 +300,7 @@ class Ail extends CActiveRecord
 			return "-";
 		}
 	}
+
+
 
 }

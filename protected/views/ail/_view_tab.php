@@ -1,18 +1,18 @@
 
 <div id="exTab1">	
 	<ul  class="nav nav-pills">
+		<?php for ($i = 1; $i <= 11; $i++) { 
+			$eh = Ail::model()->titleData($i);
+			$ya = Ail::model()->countFile($i,$model->id_ail);
+			if($ya!=0):
+				?>
 
-		<li class="active"><a  href="#1a" data-toggle="tab">Permohonan</a></li>
-		<li><a href="#2a" data-toggle="tab">Identitas</a></li>
-		<li><a href="#3a" data-toggle="tab">Data Survei</a></li>
-		<li><a href="#4a" data-toggle="tab">Jawaban</a></li>
-		<li><a href="#5a" data-toggle="tab">Perjanjian</a></li>
-		<li><a href="#6a" data-toggle="tab">Pernyataan</a></li>
-		<li><a href="#7a" data-toggle="tab">Kuitansi</a></li>
-		<li><a href="#8a" data-toggle="tab">Perintah Kerja</a></li>
-		<li><a href="#9a" data-toggle="tab">BA</a></li>
-		<li><a href="#10a" data-toggle="tab">SLO</a></li>
-		<li><a href="#11a" data-toggle="tab">Lain-Lain</a></li>
+			<li><a href="#<?php echo $i; ?>a" data-toggle="tab"><?php echo $eh; ?></a></li>
+
+			<?php
+			endif;
+		} 
+		?>
 	</ul>
 
 	<div class="tab-content clearfix">
@@ -28,7 +28,10 @@
 					echo "<div class='alert alert-warning'>";
 					echo "<h4><i class='fa fa-file-text'></i> ".$itu."</h4>";
 					echo "</div>";
-					$dataProvider=new CActiveDataProvider($ini,array('criteria'=>array('condition'=>'status=1 AND ail_id='.$model->id_ail)));
+					$dataProvider=new CActiveDataProvider($ini,
+						array('criteria'=>array(
+							'condition'=>'status=1 AND ail_id='.$model->id_ail)
+						));
 
 					echo "<div class='row'>";
 					foreach($dataProvider->getData() as $data){

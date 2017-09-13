@@ -15,23 +15,12 @@
 
           <li class="dropdown">
             <a href="#" class="dropdown-toggle waves-effect waves-light profile" data-toggle="dropdown" aria-expanded="true"><img src="<?php echo $baseUrl;?>/assets/images/logo.png" alt="user-img" class="img-circle"> </a>
-            <?php 
-            $this->widget('zii.widgets.CMenu',array(
-             'htmlOptions' => array( 'class' => 'dropdown-menu' ),
-             'submenuHtmlOptions'=>array('class'=>'dropdown-menu'),
-             'itemCssClass'=>'item-test',
-             'encodeLabel'=>false,
-             'items'=>array(
-              array('label'=>'Logout', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
-              ),
-             )); 
+            
 
-             ?>
+          </li>
+        </ul> 
 
-           </li>
-         </ul>
-
-         <div class="menu-item">
+        <div class="menu-item">
           <!-- Mobile menu toggle-->
           <a class="navbar-toggle">
             <div class="lines">
@@ -67,11 +56,12 @@
             'itemCssClass'=>'item-test',
             'encodeLabel'=>false,
             'items'=>array(
-             array('label'=>'Registrasi AIL', 'url'=>array('/site/registrasi'), 'visible'=>!Yii::app()->user->isGuest),
+             // array('label'=>'Registrasi AIL', 'url'=>array('/site/registrasi'), 'visible'=>!Yii::app()->user->isGuest),
              array('label'=>'Kelola AIL', 'url'=>array('/ail/admin'), 'visible'=>!Yii::app()->user->isGuest),
              array('label'=>'Lemari', 'url'=>array('/lemari/admin'), 'visible'=>!Yii::app()->user->isGuest),
              array('label'=>'Pelanggan', 'url'=>array('/pelanggan/admin'), 'visible'=>!Yii::app()->user->isGuest),
              array('label'=>'Petugas', 'url'=>array('/petugas/admin'), 'visible'=>!Yii::app()->user->isGuest),
+             array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
              ),
             )); 
 
@@ -86,6 +76,7 @@
              array('label'=>'Registrasi AIL', 'url'=>array('/site/registrasi'), 'visible'=>!Yii::app()->user->isGuest),
              array('label'=>'Kelola AIL', 'url'=>array('/ail/admin'), 'visible'=>!Yii::app()->user->isGuest),
              array('label'=>'Lemari', 'url'=>array('/lemari/admin'), 'visible'=>!Yii::app()->user->isGuest),
+             array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
              ),
             )); 
 
